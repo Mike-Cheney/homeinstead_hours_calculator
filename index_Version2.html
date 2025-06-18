@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Instead | Meeting Hours Calculator</title>
+  <meta name="description" content="Calculate monthly recording hours for Home Instead offices by meeting type.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Home Instead Meeting Hours Calculator</h1>
+    <form id="hours-calculator" autocomplete="off" aria-describedby="grandTotal">
+      <!-- SERVICE-USERS -->
+      <section>
+        <fieldset>
+          <legend>SERVICE-USERS</legend>
+          <div class="meetings-grid">
+            <div>
+              <label class="meeting-label" for="careConsultation-hours">Care Consultation</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="careConsultation-hours" name="careConsultation-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Care Consultation">
+                <span class="sr-only">hours per meeting</span>
+                <input type="number" min="0" step="1" id="careConsultation-count" name="careConsultation-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Care Consultations">
+                <span class="sr-only">meetings per month</span>
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="serviceReview-hours">Service Review</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="serviceReview-hours" name="serviceReview-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Service Review">
+                <input type="number" min="0" step="1" id="serviceReview-count" name="serviceReview-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Service Reviews">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="qa-hours">QA</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="qa-hours" name="qa-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per QA">
+                <input type="number" min="0" step="1" id="qa-count" name="qa-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of QAs">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="supportVisit-hours">Support Visit</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="supportVisit-hours" name="supportVisit-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Support Visit">
+                <input type="number" min="0" step="1" id="supportVisit-count" name="supportVisit-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Support Visits">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="investigations-hours">Investigations</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="investigations-hours" name="investigations-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Investigations">
+                <input type="number" min="0" step="1" id="investigations-count" name="investigations-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Investigations">
+              </div>
+            </div>
+          </div>
+          <div class="category-total" id="serviceUsers-total" aria-live="polite">Total: 0.00 hours</div>
+        </fieldset>
+      </section>
+
+      <!-- RECRUITMENT -->
+      <section>
+        <fieldset>
+          <legend>RECRUITMENT</legend>
+          <div class="meetings-grid">
+            <div>
+              <label class="meeting-label" for="screeningCall-hours">Screening Call</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="screeningCall-hours" name="screeningCall-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Screening Call">
+                <input type="number" min="0" step="1" id="screeningCall-count" name="screeningCall-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Screening Calls">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="interview-hours">Interview</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="interview-hours" name="interview-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Interview">
+                <input type="number" min="0" step="1" id="interview-count" name="interview-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Interviews">
+              </div>
+            </div>
+          </div>
+          <div class="category-total" id="recruitment-total" aria-live="polite">Total: 0.00 hours</div>
+        </fieldset>
+      </section>
+
+      <!-- EMPLOYMENT -->
+      <section>
+        <fieldset>
+          <legend>EMPLOYMENT</legend>
+          <div class="meetings-grid">
+            <div>
+              <label class="meeting-label" for="supervision-hours">Supervision</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="supervision-hours" name="supervision-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Supervision">
+                <input type="number" min="0" step="1" id="supervision-count" name="supervision-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Supervisions">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="appraisal-hours">Appraisal</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="appraisal-hours" name="appraisal-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Appraisal">
+                <input type="number" min="0" step="1" id="appraisal-count" name="appraisal-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Appraisals">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="probationReview-hours">Probation Review</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="probationReview-hours" name="probationReview-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Probation Review">
+                <input type="number" min="0" step="1" id="probationReview-count" name="probationReview-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Probation Reviews">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="disciplinary-hours">Disciplinary</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="disciplinary-hours" name="disciplinary-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Disciplinary">
+                <input type="number" min="0" step="1" id="disciplinary-count" name="disciplinary-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Disciplinaries">
+              </div>
+            </div>
+            <div>
+              <label class="meeting-label" for="backToWork-hours">Back to Work</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="backToWork-hours" name="backToWork-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Back to Work">
+                <input type="number" min="0" step="1" id="backToWork-count" name="backToWork-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Back to Work meetings">
+              </div>
+            </div>
+          </div>
+          <div class="category-total" id="employment-total" aria-live="polite">Total: 0.00 hours</div>
+        </fieldset>
+      </section>
+
+      <!-- OFFICE OPERATIONS -->
+      <section>
+        <fieldset>
+          <legend>OFFICE OPERATIONS</legend>
+          <div class="meetings-grid">
+            <div>
+              <label class="meeting-label" for="teamMeetings-hours">Team Meetings</label>
+              <div class="inputs-row">
+                <input type="number" min="0" step="0.01" id="teamMeetings-hours" name="teamMeetings-hours" placeholder="Hours" inputmode="decimal" aria-label="Hours per Team Meeting">
+                <input type="number" min="0" step="1" id="teamMeetings-count" name="teamMeetings-count" placeholder="Meetings" inputmode="numeric" aria-label="Number of Team Meetings">
+              </div>
+            </div>
+          </div>
+          <div class="category-total" id="officeOperations-total" aria-live="polite">Total: 0.00 hours</div>
+        </fieldset>
+      </section>
+
+      <!-- CARE PROFESSIONALS (dynamic) -->
+      <section>
+        <fieldset id="careProfessionals-fieldset">
+          <legend>CARE PROFESSIONALS</legend>
+          <div id="careProfessionals-wrapper">
+            <!-- Dynamic meeting types appear here -->
+          </div>
+          <button type="button" class="add-btn" id="add-care-professional-btn" aria-label="Add custom meeting type">
+            + Add Meeting Type
+          </button>
+          <div class="category-total" id="careProfessionals-total" aria-live="polite">Total: 0.00 hours</div>
+        </fieldset>
+      </section>
+
+      <!-- GRAND TOTAL -->
+      <div id="grandTotal" class="grand-total" aria-live="polite" aria-atomic="true">
+        Grand Total Recording Hours: <span id="grandTotalValue">0.00</span>
+      </div>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
